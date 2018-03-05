@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quote a day</title>
+</head>
+<body>
+	<div align="center">
+		<h1 id="quote" />
+	</div>
+
+	<script>
+		var serverQuote =  window.location.href.split("?")[1];
+		var quote = serverQuote.substring(6, serverQuote.length);
+		window.onload=function(){
+			history.pushState(window.location.href, null, window.location.protocol + '//'+ window.location.host);
+		}
+		document.getElementById("quote").innerHTML = decodeURI(quote);
+	</script>
+
+</body>
+</html>
